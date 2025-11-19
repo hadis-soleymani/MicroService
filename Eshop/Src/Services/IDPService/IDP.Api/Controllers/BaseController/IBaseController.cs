@@ -7,16 +7,6 @@ namespace IDP.Api.Controllers.BaseController
     [ApiController]
     public class IBaseController : ControllerBase
     {
-        /// <summary> 
-        /// ورود کاربر
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-
-        [HttpPost("Insert")]
-        public async Task<IActionResult> Insert([FromBody] UserCommand userCommand)
-        {
-            return Ok();
-        }
+       
     }
 }
