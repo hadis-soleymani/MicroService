@@ -1,12 +1,16 @@
-﻿using IDP.Api.Controllers.BaseController;
+﻿using Asp.Versioning;
+using IDP.Api.Controllers.BaseController;
 using IDP.Application.Command.User;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IDP.Api.Controllers.V1
 {
-    [Route("api/v1/user")]
+    
     [ApiController]
+    [ApiVersion(2)]
+    [ApiVersion(1)]
+    [Route("api/v{v:apiVersion}/Users")]
 
     public class UserController : IBaseController
     {
@@ -22,6 +26,7 @@ namespace IDP.Api.Controllers.V1
         /// <param name="id"></param>
         /// <returns></returns>
 
+        [MapToApiVersion(1)]
         [HttpPost("Insert")]
         public async Task<IActionResult> Insert([FromBody] UserCommand userCommand)
         {
