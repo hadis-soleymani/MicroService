@@ -7,6 +7,8 @@ namespace IDP.Application.Command.User
     {
         [Required(ErrorMessage = "نام اجباری است")]
         [MinLength(3)]
-        public required string Name { get; set; }
+        public required string FullName { get; set; }
+
+        public required string CodeNumber { get; set; }
     }
 }

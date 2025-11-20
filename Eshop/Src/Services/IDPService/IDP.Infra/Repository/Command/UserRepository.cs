@@ -5,7 +5,7 @@ namespace IDP.Infra.Repository.Command
 {
     public class UserRepository : IUserRepository
     {
-        public Task<bool> Insert(User user)
+        public async Task<bool> Insert(User user)
         {
             return true;
         }

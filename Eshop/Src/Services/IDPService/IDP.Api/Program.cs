@@ -1,4 +1,6 @@
 using IDP.Application.Handler.Command.User;
+using IDP.Domain.IRepository.Command;
+using IDP.Infra.Repository.Command;
 using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddMediatR(typeof(UserHandler).Assembly);
-
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
