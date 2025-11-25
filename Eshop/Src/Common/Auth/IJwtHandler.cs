@@ -2,6 +2,6 @@
 {
     public interface IJwtHandler
     {
-        JsonWebToken Create(Guid userId);
+        JsonWebToken Create(Int64 userId);
     }
 }
